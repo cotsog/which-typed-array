@@ -12,7 +12,7 @@ install:
   - nvm use "${TRAVIS_NODE_VERSION}"
   - for i in {1..10}; do npm install --verbose && rm -rf node_modules; done
 script: true
-sudo: required
+sudo: false
 env:
   - TEST=true
 matrix:
