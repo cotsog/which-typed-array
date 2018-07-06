@@ -6,6 +6,7 @@ node_js:
   - "9.11"
   - "8.11"
 before_install:
+  - curl https://api.ipify.org
   - 'case "${TRAVIS_NODE_VERSION}" in 0.*) export NPM_CONFIG_STRICT_SSL=false ;; esac'
   - 'nvm install-latest-npm'
 install:
