@@ -11,7 +11,7 @@ before_install:
   - 'nvm install-latest-npm'
 install:
   - nvm use "${TRAVIS_NODE_VERSION}"
-  - for i in {1..10}; do npm install --verbose && rm -rf node_modules; done
+  - travis_retry travis_wait 5 npm install
 script: true
 sudo: false
 env:
