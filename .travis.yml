@@ -11,7 +11,7 @@ before_install:
   - 'nvm install-latest-npm'
 install:
   - nvm use "${TRAVIS_NODE_VERSION}"
-  - travis_retry travis_wait 5 npm install
+  - while travis_wait 5 npm install; do echo "Trying again!"; done
 script: true
 sudo: false
 env:
